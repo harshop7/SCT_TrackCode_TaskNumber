@@ -1,0 +1,182 @@
+/* Basic Reset: Remove default padding and margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* General Body Styling */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f9fc; /* Light background to make text pop */
+    color: #333; /* Dark text for readability */
+    scroll-behavior: smooth; /* Smooth scrolling */
+  }
+  
+  /* Navbar - Fixed, floating at the top */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scroll */
+  }
+  
+  /* Navbar changes on scroll */
+  nav.scrolled {
+    background-color: #00796b; /* Change background on scroll */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Logo Styling */
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #004d40; /* Dark teal color */
+    transition: color 0.3s ease;
+  }
+  
+  .logo:hover {
+    color: #80deea; /* Change color on hover for interaction */
+  }
+  
+  /* Navbar Links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-left: auto;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Hover Effect: Background color changes with smooth transition */
+  .nav-links li a:hover {
+    background-color: #00796b;
+    color: #ffffff;
+    transform: scale(1.05); /* Slight scale up for added effect */
+  }
+  
+  /* Mobile menu toggle */
+  .menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #00796b;
+  }
+  
+  /* Hero Section Styling */
+  .hero {
+    height: 100vh;
+    background: linear-gradient(to right, #00796b, #004d40); /* Gradient for modern feel */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem;
+    animation: fadeInUp 1.2s ease-out; /* Smooth fade-in */
+  }
+  
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: slideInLeft 1s ease-out;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    animation: slideInLeft 1.2s ease-out;
+  }
+  
+  /* Section Styling */
+  section {
+    padding: 5rem 2rem;
+    max-width: 960px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  /* Alternate Background Color for Sections */
+  section:nth-child(even) {
+    background-color: #e0f7fa; /* Light cyan to differentiate sections */
+  }
+  
+  section:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  /* Footer Styling */
+  footer {
+    background-color: #004d40;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1rem;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Media Queries for Mobile Responsiveness */
+  @media (max-width: 768px) {
+    /* Navigation Links on Small Screens */
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: white;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    /* Mobile Menu Toggle - Visible on Small Screens */
+    .menu-toggle {
+      display: block;
+    }
+  }
+  
